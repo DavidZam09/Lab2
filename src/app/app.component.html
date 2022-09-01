@@ -1,0 +1,28 @@
+<div class="contenedor">
+  <mat-form-field>
+    <input type="number" [(ngModel)]="edad" matInput placeholder="Ingrese Su edad">
+  </mat-form-field>
+  <mat-form-field>
+    <input type="number" [(ngModel)]="estatura" matInput placeholder="Ingrese Su Estatura">
+  </mat-form-field>
+  <mat-form-field>
+    <input type="number" [(ngModel)]="peso" matInput placeholder="Ingrese Su Peso">
+  </mat-form-field>
+  <br>
+  sexo:
+  <mat-radio-group name="options" [(ngModel)]="opcionSelect">
+
+    <mat-radio-button style="margin: 10px;" *ngFor="let sex of sexos" [value]="sex">
+      {{sex}}
+    </mat-radio-button>
+    <!--slider-->
+  </mat-radio-group>
+  <br>
+  <label for="">Actividad Fisica:</label>
+  <mat-slider [(ngModel)]="sliderAF" (change)="change()"></mat-slider>
+  {{totalSlider}} % - {{actividadFisica}}
+  <br>
+  <button mat-raised-button color="primary" (click)="calcular()">Calcular</button>
+<br>
+<br>
+</div>
